@@ -23,7 +23,7 @@ jobs:
                   pip install -r requirements.txt
 
             - name: Docker Build and Push
-              run: 
+              run: |
                   docker-compose -f docker-compose.yaml build
                   docker tag webapp:latest samruddhi230504/webapp:latest
                   docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
